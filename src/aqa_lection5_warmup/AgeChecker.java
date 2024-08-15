@@ -10,7 +10,7 @@ public class AgeChecker {
     }
 
     public static void main(String[] args) {
-        // Приклади використання методу checkAge
+
         System.out.println("checkAge(18) → " + checkAge(18));
         System.out.println("checkAge(0) → " + checkAge(0));
         System.out.println("checkAge(99) → " + checkAge(99));
