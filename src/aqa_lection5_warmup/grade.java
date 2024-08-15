@@ -14,8 +14,8 @@ public class grade {
     }
 
     public static void main(String[] args) {
-        System.out.println("getGrade(5) → \"" + getGrade(5) + "\"");
-        System.out.println("getGrade(1) → \"" + getGrade(1) + "\"");
-        System.out.println("getGrade(-3) → \"" + getGrade(-3) + "\"");
+        System.out.println(getGrade(5));
+        System.out.println(getGrade(1));
+        System.out.println(getGrade(-3));
     }
 }
