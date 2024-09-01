@@ -8,7 +8,7 @@ public class CityCodesExample {
 
         Map<String, String> cityCodes = new HashMap<>();
 
-        // Додаємо міста та їхні телефонні коди до мапи
+
         cityCodes.put("Київ", "044");
         cityCodes.put("Харків", "057");
         cityCodes.put("Одеса", "048");
