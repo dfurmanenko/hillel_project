@@ -1,7 +1,7 @@
 package aqa_oop_task;
 
+
 public class Man extends Person {
-    // Статичне, фіналізоване поле
     public static final String GENDER = "Male";
 
     public Man(String name, int age, PersonRole role) {
@@ -9,8 +9,18 @@ public class Man extends Person {
     }
 
     @Override
+    public void changeProfession(PersonRole newRole) {
+        setRole(newRole);
+    }
+
+    @Override
     public void displayInformation() {
-        super.displayInformation();
+        System.out.println("Name: " + getName() + ", Age: " + getAge() + ", Role: " + getRole());
         System.out.println("Gender: " + GENDER);
+    }
+
+    public void displayInformation(String prefix) {
+        super.displayInformation(prefix);
+        System.out.println(prefix + " Gender: " + GENDER);
     }
 }

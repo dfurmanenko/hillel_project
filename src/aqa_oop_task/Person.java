@@ -1,18 +1,18 @@
 package aqa_oop_task;
 
-public class Person implements Displayable {
+
+public abstract class Person implements Displayable {
     private String name;
     private int age;
     private PersonRole role;
 
-    // Конструктор
+
     public Person(String name, int age, PersonRole role) {
         this.name = name;
         this.age = age;
         this.role = role;
     }
 
-    // Гетери та сетери
     public String getName() {
         return name;
     }
@@ -37,14 +37,13 @@ public class Person implements Displayable {
         this.role = role;
     }
 
-    // Метод для зміни професії
-    public void changeProfession(PersonRole newRole) {
-        this.role = newRole;
+    public abstract void changeProfession(PersonRole newRole);
+
+    public void displayInformation(String prefix) {
+        System.out.println(prefix + " Name: " + name + ", Age: " + age + ", Role: " + role);
     }
 
-    // Реалізація методу інтерфейсу для виведення інформації
+
     @Override
-    public void displayInformation() {
-        System.out.println("Name: " + name + ", Age: " + age + ", Role: " + role);
-    }
+    public abstract void displayInformation(); // Реалізація в дочірніх класах
 }
