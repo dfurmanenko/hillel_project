@@ -7,17 +7,27 @@ public abstract class Person implements Displayable {
     private PersonRole role;
 
 
-    public Person(String name, int age, PersonRole role) {
+    public Person(String name, int age, PersonRole role) throws InvalidPersonDataException {
+        if (name == null || name.isEmpty()) {
+            throw new InvalidPersonDataException("Ім'я не може бути порожнім.");
+        }
+        if (age < 0) {
+            throw new InvalidPersonDataException("Вік не може бути негативним.");
+        }
         this.name = name;
         this.age = age;
         this.role = role;
     }
 
+
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws InvalidPersonDataException {
+        if (name == null || name.isEmpty()) {
+            throw new InvalidPersonDataException("Ім'я не може бути порожнім.");
+        }
         this.name = name;
     }
 
@@ -25,7 +35,10 @@ public abstract class Person implements Displayable {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(int age) throws InvalidPersonDataException {
+        if (age < 0) {
+            throw new InvalidPersonDataException("Вік не може бути негативним.");
+        }
         this.age = age;
     }
 
@@ -37,13 +50,5 @@ public abstract class Person implements Displayable {
         this.role = role;
     }
 
-    public abstract void changeProfession(PersonRole newRole);
-
-    public void displayInformation(String prefix) {
-        System.out.println(prefix + " Name: " + name + ", Age: " + age + ", Role: " + role);
-    }
-
-
-    @Override
-    public abstract void displayInformation(); // Реалізація в дочірніх класах
+    public abstract void displayInformation();
 }
